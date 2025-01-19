@@ -35,6 +35,7 @@ These tools yield groups of items from a source iterable.
 .. autofunction:: batched
 .. autofunction:: grouper
 .. autofunction:: partition
+.. autofunction:: transpose
 
 
 Lookahead and lookback
@@ -117,6 +118,7 @@ These tools combine multiple iterables.
 .. autofunction:: interleave
 .. autofunction:: interleave_longest
 .. autofunction:: interleave_evenly
+.. autofunction:: partial_product
 .. autofunction:: sort_together
 .. autofunction:: value_chain
 .. autofunction:: zip_offset(*iterables, offsets, longest=False, fillvalue=None)
@@ -127,8 +129,6 @@ These tools combine multiple iterables.
 
 **Itertools recipes**
 
-.. autofunction:: dotproduct
-.. autofunction:: convolve
 .. autofunction:: flatten
 .. autofunction:: roundrobin
 .. autofunction:: prepend
@@ -149,6 +149,7 @@ These tools return summarized or aggregated data from an iterable.
 .. autofunction:: consecutive_groups(iterable, ordering=lambda x: x)
 .. autoclass:: run_length
 .. autofunction:: map_reduce
+.. autofunction:: join_mappings
 .. autofunction:: exactly_n(iterable, n, predicate=bool)
 .. autofunction:: is_sorted
 .. autofunction:: all_unique
@@ -183,17 +184,21 @@ These tools yield certain items from an iterable.
 .. autofunction:: last(iterable[, default])
 .. autofunction:: one(iterable, too_short=ValueError, too_long=ValueError)
 .. autofunction:: only(iterable, default=None, too_long=ValueError)
-.. autofunction:: strictly_n(iterable, too_short=None, too_long=None)
+.. autofunction:: strictly_n(iterable, n, too_short=None, too_long=None)
 .. autofunction:: strip
 .. autofunction:: lstrip
 .. autofunction:: rstrip
 .. autofunction:: filter_except
 .. autofunction:: map_except
+.. autofunction:: filter_map
+.. autofunction:: iter_suppress
 .. autofunction:: nth_or_last(iterable, n[, default])
 .. autofunction:: unique_in_window
 .. autofunction:: duplicates_everseen
 .. autofunction:: duplicates_justseen
+.. autofunction:: classify_unique
 .. autofunction:: longest_common_prefix
+.. autofunction:: takewhile_inclusive
 
 ----
 
@@ -205,6 +210,7 @@ These tools yield certain items from an iterable.
 .. autofunction:: tail
 .. autofunction:: unique_everseen
 .. autofunction:: unique_justseen
+.. autofunction:: unique
 
 
 Combinatorics
@@ -218,12 +224,17 @@ These tools yield combinatorial arrangements of items from iterables.
 
 .. autofunction:: distinct_permutations
 .. autofunction:: distinct_combinations
+.. autofunction:: nth_combination_with_replacement
 .. autofunction:: circular_shifts
 .. autofunction:: partitions
 .. autofunction:: set_partitions
 .. autofunction:: product_index
 .. autofunction:: combination_index
 .. autofunction:: permutation_index
+.. autofunction:: combination_with_replacement_index
+.. autofunction:: gray_product
+.. autofunction:: outer_product
+.. autofunction:: powerset_of_sets
 
 ----
 
@@ -263,6 +274,31 @@ consume iterables.
 .. autofunction:: iter_except
 
 
+Math
+====
+**New itertools**
+
+.. autofunction:: dft
+.. autofunction:: idft
+.. autofunction:: nth_prime
+
+----
+
+**Itertools recipes**
+
+.. autofunction:: convolve
+.. autofunction:: dotproduct
+.. autofunction:: factor
+.. autofunction:: matmul
+.. autofunction:: polynomial_from_roots
+.. autofunction:: polynomial_derivative
+.. autofunction:: polynomial_eval
+.. autofunction:: sieve
+.. autofunction:: is_prime
+.. autofunction:: sum_of_squares
+.. autofunction:: totient
+
+
 Others
 ======
 
@@ -281,13 +317,15 @@ Others
 .. autoclass:: SequenceView
 .. autofunction:: time_limited
 .. autofunction:: map_if(iterable, pred, func, func_else=lambda x: x)
+.. autofunction:: doublestarmap
 
 ----
 
 **Itertools recipes**
 
+.. autofunction:: iter_index
 .. autofunction:: consume
 .. autofunction:: tabulate
 .. autofunction:: repeatfunc
-.. autofunction:: polynomial_from_roots
-.. autofunction:: sieve
+.. autofunction:: reshape
+.. autofunction:: loops

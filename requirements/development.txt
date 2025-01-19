@@ -1,0 +1,9 @@
+coverage
+flit
+mypy
+ruff
+setuptools
+sphinx
+sphinx_rtd_theme
+twine
+wheel

@@ -21,6 +21,9 @@ pip-log.txt
 .coverage
 .tox
 .noseids
+htmlcov/
+coverage.xml
+.pytest_cache
 
 # Docs by Sphinx
 _build
@@ -39,3 +42,6 @@ venv/
 # Mypy
 .mypy_cache
 .dmypy.json
+
+# Ruff
+.ruff_cache/
